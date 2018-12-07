@@ -5,9 +5,10 @@ using UnityEngine.Video;
 
 [System.Serializable]
 public class Workout {
-  // title - e.g. "Liegestütze"; group - e.g. "Arme"; videoFile - e.g. "../Videos/Liegestütze.mp4"
-  // icon is a reference sprite to use throughout the app
+	// title - e.g. "Liegestütze"; group - e.g. "Arme"; videoFile - e.g. "../Videos/Liegestütze.mp4"
+	// icon is a reference sprite to use throughout the app
 	public string title, group;
+	public int workoutId;
 	public Sprite icon;
 	public VideoClip vc;
 

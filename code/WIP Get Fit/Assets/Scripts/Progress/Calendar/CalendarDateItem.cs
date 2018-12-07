@@ -1,30 +1,36 @@
-﻿using UnityEngine;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
-using System;
-
 
 public class CalendarDateItem : MonoBehaviour {
 
     public DateTime datetime;
 
-    public void OnDateItemClick() {
-        //CalendarController._calendarInstance.OnDateItemClick(gameObject.GetComponentInChildren<Text>().text);
+    public void OnDateItemClick () {
+
     }
 
-    private void Start() {
-        CheckDate();
+    private void OnEnable () {
+        CheckDate ();
     }
 
-    public void CheckDate() {
-        datetime = CalendarController._calendarInstance.GetDateTimeFromItem(gameObject.GetComponentInChildren<Text>().text);
-
-        foreach (KeyValuePair<DateTime, List<WorkoutSession>> entry in GameManager.instance.workoutHistory) {
-            if (entry.Key == datetime) this.GetComponent<UnityEngine.UI.Image>().color = Color.red;
-            else this.GetComponent<UnityEngine.UI.Image>().color = Color.white;
+    public void CheckDate () {
+        Color cellColor = Color.white;
+        datetime = CalendarController._calendarInstance.GetDateTimeFromItem (gameObject.GetComponentInChildren<Text> ().text);
+        if (GameManager.instance.workoutHistory.ContainsKey (datetime)) {
+            if (GameManager.instance.GetTotalWorkoutSecondsForDate (datetime) < GameManager.instance.medThresh) {
+                cellColor = GameManager.instance.lowReward;
+            } else if (GameManager.instance.GetTotalWorkoutSecondsForDate (datetime) >= GameManager.instance.medThresh && GameManager.instance.GetTotalWorkoutSecondsForDate (datetime) < GameManager.instance.highThresh) {
+                cellColor = GameManager.instance.medReward;
+            } else if (GameManager.instance.GetTotalWorkoutSecondsForDate (datetime) >= GameManager.instance.highThresh) {
+                cellColor = GameManager.instance.highReward;
+            }
+        } else {
+            cellColor = Color.white;
         }
+        this.GetComponent<UnityEngine.UI.Image> ().color = cellColor;
     }
-
 
 }

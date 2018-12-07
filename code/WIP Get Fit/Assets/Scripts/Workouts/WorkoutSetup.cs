@@ -8,36 +8,38 @@ public class WorkoutSetup : MonoBehaviour {
     public UnityEngine.UI.Text title, minuteLabel;
     public UnityEngine.UI.Slider slider;
 
-    private void OnEnable() {
-        icon.sprite = GameManager.instance.currentWorkoutSession.workout.icon;
-        title.text = GameManager.instance.currentWorkoutSession.workout.title;
+    private void OnEnable () {
+        icon.sprite = GameManager.instance.workouts[GameManager.instance.currentWorkoutSession.workoutId].icon;
+        title.text = GameManager.instance.workouts[GameManager.instance.currentWorkoutSession.workoutId].title;
     }
 
-    public void OnSliderValueChange() {
-        int val = (int)slider.value;
+    public void OnSliderValueChange () {
+        int val = (int) slider.value;
         if (val == 1) minuteLabel.text = val + " Minute";
         else minuteLabel.text = val + " Minuten";
-
-        if (val >= 1 && val <= 5) {
+        GameManager.instance.currentWorkoutSession.isFreeMode = false;
+        if (val >= (int) slider.minValue && val <= (int) GameManager.instance.medThresh / 60f) {
             minuteLabel.color = GameManager.instance.lowReward;
             GameManager.instance.currentReward = minuteLabel.color;
-        } else if (val >= 6 && val <= 10) {
+        } else if (val > (int) GameManager.instance.medThresh / 60f && val <= (int) GameManager.instance.highThresh / 60f) {
             minuteLabel.color = GameManager.instance.medReward;
             GameManager.instance.currentReward = minuteLabel.color;
-        } else if (val >= 11 && val <= 15) {
+        } else if (val > (int) GameManager.instance.highThresh / 60f && val <= (int) slider.maxValue - 1) {
             minuteLabel.color = GameManager.instance.highReward;
             GameManager.instance.currentReward = minuteLabel.color;
         } else {
             minuteLabel.color = Color.black;
         }
-
-        if (val == slider.maxValue) {
-            minuteLabel.text = "Freier Modus";
-        }
+        slider.handleRect.GetComponent<UnityEngine.UI.Image> ().color = GameManager.instance.currentReward;
     }
 
-    public void StartWorkout() {
+    public void StartWorkout () {
+        if (slider.value == slider.maxValue) {
+            minuteLabel.text = "Freier Modus";
+            GameManager.instance.currentReward = Color.black;
+            GameManager.instance.currentWorkoutSession.isFreeMode = true;
+        }
         GameManager.instance.currentWorkoutSession.durationSetup = slider.value * 60;
-        SVManager.instance.ChangeWorkoutSV(SVManager.instance.workoutView);
+        SVManager.instance.ChangeWorkoutSV (SVManager.instance.workoutView);
     }
 }

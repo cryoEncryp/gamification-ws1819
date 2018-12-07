@@ -7,11 +7,10 @@ public class ProgressInfos : MonoBehaviour {
 	public int fsSmall = 30;
 	public int fsBig = 50;
 
-	void OnEnable() {
-		kcalLabel.text = "<i><size="+fsBig+">"+GameManager.instance.GetTotalCalories().ToString("0.00")+"</size></i>\n<size="+fsSmall+">kcal</size>";
-		minLabel.text = "<i><size="+fsBig+">"+GameManager.instance.GetTotalWorkoutMinutes()+"</size></i>\n<size="+fsSmall+">min</size>";
-		streakLabel.text = "<i><size="+fsBig+">10</size></i>\n<size="+fsSmall+">days</size>";
+	void OnEnable () {
+		kcalLabel.text = "<i><size=" + fsSmall + ">Burned</size></i>\n<size=" + fsBig + ">" + GameManager.instance.GetTotalCalories ().ToString ("0.00") + "</size>\n<i><size=" + fsSmall + ">kcal</size></i>";
+		minLabel.text = "<i><size=" + fsSmall + ">Duration</size></i>\n<size=" + fsBig + ">" + (GameManager.instance.GetTotalWorkoutSeconds () / 60f).ToString ("0.00") + "</size>\n<i><size=" + fsSmall + ">min</size></i>";
+		streakLabel.text = "<i><size=" + fsSmall + ">Streak</size></i>\n<size=" + fsBig + ">" + GameManager.instance.GetCurrentStreak () + "</size>\n<i><size=" + fsSmall + ">days</size></i>";
 	}
-
 
 }

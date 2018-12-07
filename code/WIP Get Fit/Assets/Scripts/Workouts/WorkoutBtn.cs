@@ -10,15 +10,15 @@ public class WorkoutBtn : MonoBehaviour {
     public UnityEngine.UI.Image icon;
     public Workout workout;
 
-    private void OnEnable() {
+    private void OnEnable () {
         workout = GameManager.instance.workouts[workoutId];
         label.text = workout.title;
         icon.sprite = workout.icon;
     }
 
-    public void OnClick() {
-        GameManager.instance.currentWorkoutSession.workout = workout;
-        SVManager.instance.ChangeWorkoutSV(SVManager.instance.workoutSetup);
+    public void OnClick () {
+        GameManager.instance.currentWorkoutSession.workoutId = workoutId;
+        SVManager.instance.ChangeWorkoutSV (SVManager.instance.workoutSetup);
     }
 
 }
