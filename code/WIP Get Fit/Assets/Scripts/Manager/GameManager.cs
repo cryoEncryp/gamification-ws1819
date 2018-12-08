@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance = null;
 
     public GameObject intro;
-    //prototype presentation
-    public bool OVERRIDE_FIRSTSTART = false;
 
     //threshold float values - necessary workout in seconds per day to get low/med/high reward
     public float medThresh, highThresh;
@@ -26,6 +24,8 @@ public class GameManager : MonoBehaviour {
 
     //stores all completed workouts
     public Dictionary<DateTime, List<WorkoutSession>> workoutHistory = new Dictionary<DateTime, List<WorkoutSession>> ();
+    public List<DailyChallenge> dailyChallenges;
+    public DailyChallenge todaysChallenge;
 
     void OnApplicationPause () {
         SavePrefs ();
@@ -41,8 +41,6 @@ public class GameManager : MonoBehaviour {
         else if (instance != this) Destroy (gameObject);
         DontDestroyOnLoad (gameObject);
         LoadPrefs ();
-        // Prototype
-        if (OVERRIDE_FIRSTSTART) intro.SetActive (true);
     }
 
     public void AddWorkoutSessionToHistory (WorkoutSession ws) {
@@ -128,5 +126,10 @@ public class GameManager : MonoBehaviour {
         } else {
             intro.SetActive (true);
         }
+    }
+    // Prototype
+    public void TEST_ClearPrefs () {
+        PlayerPrefs.DeleteAll ();
+        workoutHistory = new Dictionary<DateTime, List<WorkoutSession>> ();
     }
 }

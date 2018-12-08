@@ -5,10 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class WorkoutSession {
   public int workoutId;
-  //burned calories
-  public double kcal = 0f;
   //duration in seconds; setup = duration that user selected, completed = duration that user actually completed
   public float durationSetup, durationCompleted = 0f;
+  //burned calories
+  public double kcal = 0f;
   //is workout without countdown, aka free mode
   public bool isFreeMode = false;
 
@@ -54,16 +54,16 @@ public class WorkoutSession {
 
   public void Clear () {
     this.workoutId = 0;
-    this.kcal = 0f;
     this.durationSetup = this.durationCompleted = 0f;
+    this.kcal = 0f;
     this.isFreeMode = false;
   }
 
   // constructor used for prototype testing
-  public WorkoutSession (int _workoutId = 0, double _kcal = 0, float _durationSetup = 0f, float _durationCompleted = 0f, bool isFreeMode = false) {
+  public WorkoutSession (int _workoutId = 0, float _durationSetup = 0f, float _durationCompleted = 0f, double _kcal = 0, bool isFreeMode = false) {
     workoutId = _workoutId;
-    kcal = _kcal;
     durationSetup = _durationSetup;
     durationCompleted = _durationCompleted;
+    kcal = _kcal;
   }
 }

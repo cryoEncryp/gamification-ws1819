@@ -6,7 +6,7 @@ using UnityEngine;
 public class SVManager : MonoBehaviour {
 
     public static SVManager instance = null;
-    public GameObject svWorkouts, svProgress, svInstructions, workoutGroups, workoutSubs, workoutSetup, workoutView;
+    public GameObject svWorkouts, svProgress, svInstructions, workoutGroups, workoutSubs, workoutSetup, workoutView, dailyChallengeSetup;
 
     private void Awake () {
         if (instance == null) instance = this;
@@ -20,6 +20,7 @@ public class SVManager : MonoBehaviour {
             workoutSubs.SetActive (false);
             workoutSetup.SetActive (false);
             workoutView.SetActive (false);
+            dailyChallengeSetup.SetActive (false);
             svProgress.SetActive (false);
             svInstructions.SetActive (false);
             sv.SetActive (true);
@@ -46,6 +47,7 @@ public class SVManager : MonoBehaviour {
         workoutSubs.SetActive (false);
         workoutSetup.SetActive (false);
         workoutView.SetActive (false);
+        dailyChallengeSetup.SetActive (false);
         sv.SetActive (true);
     }
 }

@@ -16,7 +16,7 @@ public class WorkoutSetup : MonoBehaviour {
     public void OnSliderValueChange () {
         int val = (int) slider.value;
         if (val == 1) minuteLabel.text = val + " Minute";
-        else minuteLabel.text = val + " Minuten";
+        else minuteLabel.text = val + " Minutes";
         GameManager.instance.currentWorkoutSession.isFreeMode = false;
         if (val >= (int) slider.minValue && val <= (int) GameManager.instance.medThresh / 60f) {
             minuteLabel.color = GameManager.instance.lowReward;
@@ -27,7 +27,9 @@ public class WorkoutSetup : MonoBehaviour {
         } else if (val > (int) GameManager.instance.highThresh / 60f && val <= (int) slider.maxValue - 1) {
             minuteLabel.color = GameManager.instance.highReward;
             GameManager.instance.currentReward = minuteLabel.color;
-        } else {
+        } else if (val == slider.maxValue) {
+            minuteLabel.text = "Free Mode";
+            GameManager.instance.currentReward = Color.black;
             minuteLabel.color = Color.black;
         }
         slider.handleRect.GetComponent<UnityEngine.UI.Image> ().color = GameManager.instance.currentReward;
@@ -35,8 +37,6 @@ public class WorkoutSetup : MonoBehaviour {
 
     public void StartWorkout () {
         if (slider.value == slider.maxValue) {
-            minuteLabel.text = "Freier Modus";
-            GameManager.instance.currentReward = Color.black;
             GameManager.instance.currentWorkoutSession.isFreeMode = true;
         }
         GameManager.instance.currentWorkoutSession.durationSetup = slider.value * 60;

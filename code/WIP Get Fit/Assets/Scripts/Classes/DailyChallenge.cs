@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DailyChallenge : MonoBehaviour {
+[System.Serializable]
+public class DailyChallenge {
 
-	private List<WorkoutSession> challenges;
+	public List<WorkoutSession> challenges;
 
 	public DailyChallenge (List<WorkoutSession> _challenges) {
 		challenges = _challenges;

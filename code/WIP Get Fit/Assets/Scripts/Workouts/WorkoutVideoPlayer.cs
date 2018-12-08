@@ -3,13 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WorkoutVideoPlayer : MonoBehaviour {
-  // Use this for initialization
+
   void OnEnable () {
     var videoPlayer = this.gameObject.GetComponent<UnityEngine.Video.VideoPlayer> ();
-    videoPlayer.clip = GameManager.instance.workouts[GameManager.instance.currentWorkoutSession.workoutId].vc;
+    videoPlayer.Prepare ();
+    videoPlayer.clip = GameManager.instance.workouts[GameManager.instance.currentWorkoutSession.workoutId].video;
+    // videoPlayer.loopPointReached += EndReached;
+    videoPlayer.skipOnDrop = true;
+    videoPlayer.isLooping = true;
+    videoPlayer.Play ();
   }
 
   void OnDisable () {
     this.gameObject.GetComponent<UnityEngine.Video.VideoPlayer> ().targetTexture.Release ();
   }
+
+  // void EndReached (UnityEngine.Video.VideoPlayer videoPlayer) {
+  //   videoPlayer.clip = GameManager.instance.workouts[GameManager.instance.currentWorkoutSession.workoutId].video;
+  //   videoPlayer.Prepare ();
+  //   videoPlayer.Play ();
+  // }
 }

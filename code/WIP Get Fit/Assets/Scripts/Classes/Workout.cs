@@ -10,7 +10,7 @@ public class Workout {
 	public string title, group;
 	public int workoutId;
 	public Sprite icon;
-	public VideoClip vc;
+	public VideoClip video;
 
 	// used for calories calculation
 	// based on http://fitnowtraining.com/2012/01/formula-for-calories-burned/

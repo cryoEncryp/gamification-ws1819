@@ -6,19 +6,18 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TestData : MonoBehaviour {
+	public bool OVERRIDE_FIRSTSTART = false, INJECT_TESTDATA = false;
+
 	void Start () {
-		// GameManager.instance.workoutHistory.Add (DateTime.Parse ("6/12/2018", new CultureInfo ("de-DE", true)), new List<WorkoutSession> (new WorkoutSession[] { new WorkoutSession (20, 100, 400f, 200f) }));
+		if (OVERRIDE_FIRSTSTART) GameManager.instance.intro.SetActive (true);
+		if (INJECT_TESTDATA) {
+			GameManager.instance.workoutHistory.Add (DateTime.Parse ("10/12/2018", new CultureInfo ("de-DE", true)), new List<WorkoutSession> (new WorkoutSession[] { new WorkoutSession (21, 360f, 360f, 75) }));
 
-		// GameManager.instance.workoutHistory.Add (DateTime.Parse ("5/12/2018", new CultureInfo ("de-DE", true)), new List<WorkoutSession> (new WorkoutSession[] { new WorkoutSession (19, 100, 400f, 700f) }));
+			GameManager.instance.workoutHistory.Add (DateTime.Parse ("9/12/2018", new CultureInfo ("de-DE", true)), new List<WorkoutSession> (new WorkoutSession[] { new WorkoutSession (18, 750f, 750f, 225) }));
 
-		// GameManager.instance.workoutHistory.Add (DateTime.Parse ("4/12/2018", new CultureInfo ("de-DE", true)), new List<WorkoutSession> (new WorkoutSession[] { new WorkoutSession (18, 100, 400f, 100f) }));
+			GameManager.instance.workoutHistory.Add (DateTime.Parse ("8/12/2018", new CultureInfo ("de-DE", true)), new List<WorkoutSession> (new WorkoutSession[] { new WorkoutSession (19, 400f, 400f, 125) }));
 
-		// GameManager.instance.workoutHistory.Add (DateTime.Parse ("3/12/2018", new CultureInfo ("de-DE", true)), new List<WorkoutSession> (new WorkoutSession[] { new WorkoutSession (1, 100, 400f, 400f) }));
-
-		// GameManager.instance.workoutHistory.Add (DateTime.Parse ("1/12/2018", new CultureInfo ("de-DE", true)), new List<WorkoutSession> (new WorkoutSession[] { new WorkoutSession (2, 100, 400f, 700f) }));
-
-		// GameManager.instance.workoutHistory.Add (DateTime.Parse ("2/12/2018", new CultureInfo ("de-DE", true)), new List<WorkoutSession> (new WorkoutSession[] { new WorkoutSession (3, 100, 400f, 100f) }));
-
-		// GameManager.instance.workoutHistory.Add (DateTime.Parse ("30/11/2018", new CultureInfo ("de-DE", true)), new List<WorkoutSession> (new WorkoutSession[] { new WorkoutSession (4, 100, 400f, 400f) }));
+			GameManager.instance.workoutHistory.Add (DateTime.Parse ("6/12/2018", new CultureInfo ("de-DE", true)), new List<WorkoutSession> (new WorkoutSession[] { new WorkoutSession (18, 100f, 100f, 55) }));
+		}
 	}
 }
