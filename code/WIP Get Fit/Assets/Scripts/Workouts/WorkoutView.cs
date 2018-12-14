@@ -112,6 +112,8 @@ public class WorkoutView : MonoBehaviour {
 		GameManager.instance.AddWorkoutSessionToHistory (ws);
 		cws.Clear ();
 		hasAddedWorkoutSessionToHistory = true;
+		// add 1 XP per 1 Minute of completed workout
+		GameManager.instance.AddXP ((int) (ws.durationCompleted / 60));
 	}
 
 	//Prototype

@@ -18,6 +18,11 @@ public class GameManager : MonoBehaviour {
     public List<WorkoutGroup> workoutGroups;
     public List<Workout> workouts;
     public User user = new User ("m", 0, 0, 0);
+    // User XP calculation factors
+    public float expInc = 1f; // https://www.wolframalpha.com/input/?i=plot+floor(1+*+sqrt(x))+for+x+from+0+to+500
+    public float inverseCalcFactor = 1f;
+    public UnityEngine.UI.Slider lvlProgressBar;
+    public UnityEngine.UI.Text lvlLabel;
 
     public WorkoutSession currentWorkoutSession;
     public bool isCurrentWorkoutActive = false;
@@ -26,6 +31,8 @@ public class GameManager : MonoBehaviour {
     public Dictionary<DateTime, List<WorkoutSession>> workoutHistory = new Dictionary<DateTime, List<WorkoutSession>> ();
     public List<DailyChallenge> dailyChallenges;
     public DailyChallenge todaysChallenge;
+
+    public List<int> unlockedWorkouts = new List<int> ();
 
     void OnApplicationPause () {
         SavePrefs ();
@@ -110,6 +117,8 @@ public class GameManager : MonoBehaviour {
         PlayerPrefs.SetInt ("user_age", user.age);
         PlayerPrefs.SetInt ("user_height", user.height);
         PlayerPrefs.SetInt ("user_weight", user.weight);
+        PlayerPrefs.SetInt ("user_lvl", user.lvl);
+        PlayerPrefs.SetInt ("user_totalXP", user.totalXP);
         //serialize workoutHistory-dict into json string and save it into the PlayerPrefs
         var sWorkoutHistory = JsonConvert.SerializeObject (workoutHistory);
         PlayerPrefs.SetString ("workoutHistory", sWorkoutHistory);
@@ -119,14 +128,42 @@ public class GameManager : MonoBehaviour {
     public void LoadPrefs () {
         if (PlayerPrefs.HasKey ("firststart")) {
             intro.SetActive (false);
-            user = new User (PlayerPrefs.GetString ("user_gender"), PlayerPrefs.GetInt ("user_age"), PlayerPrefs.GetInt ("user_height"), PlayerPrefs.GetInt ("user_weight"));
+            user = new User (PlayerPrefs.GetString ("user_gender"), PlayerPrefs.GetInt ("user_age"),
+                PlayerPrefs.GetInt ("user_height"), PlayerPrefs.GetInt ("user_weight"),
+                PlayerPrefs.GetInt ("user_lvl"), PlayerPrefs.GetInt ("user_totalXP"));
+            AddXP (0); //add 0 XP to restore progressbar position
+            lvlLabel.text = "[Level " + user.lvl + "]";
             //deserialize json-string into workoutHistory-dict and restore it
             var dWorkoutHistory = JsonConvert.DeserializeObject<Dictionary<DateTime, List<WorkoutSession>>> (PlayerPrefs.GetString ("workoutHistory"));
             workoutHistory = dWorkoutHistory;
+            LevelRewards.UnlockLevelRewards ();
         } else {
             intro.SetActive (true);
         }
     }
+
+    public void AddXP (int exp) {
+        user.totalXP += exp;
+        int tempLVL = Mathf.FloorToInt (expInc * Mathf.Sqrt (user.totalXP));
+        if (tempLVL > user.lvl) {
+            // set new user level
+            user.lvl = tempLVL;
+            // unlock level specific rewards
+            LevelRewards.UnlockLevelRewards ();
+            // label manipulation
+            lvlLabel.text = "[Level " + user.lvl + "]";
+            //TODO Level-Up animation?
+        }
+        float expNext = (inverseCalcFactor * (user.lvl + 1) * (user.lvl + 1));
+        float expLast = (inverseCalcFactor * user.lvl * user.lvl);
+        float diff = expNext - user.totalXP;
+
+        // progressbar manipulation
+        lvlProgressBar.maxValue = expNext;
+        lvlProgressBar.minValue = expLast;
+        lvlProgressBar.value = (expNext - diff);
+    }
+
     // Prototype
     public void TEST_ClearPrefs () {
         PlayerPrefs.DeleteAll ();
