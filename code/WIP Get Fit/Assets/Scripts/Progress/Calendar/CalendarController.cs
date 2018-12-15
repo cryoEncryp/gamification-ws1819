@@ -14,54 +14,58 @@ public class CalendarController : MonoBehaviour {
 
     public GameObject _item;
 
-    public List<GameObject> _dateItems = new List<GameObject> ();
+    public List<GameObject> _dateItems = new List<GameObject>();
     const int _totalDateNum = 42;
 
     private DateTime _dateTime;
     public static CalendarController _calendarInstance;
 
-    void Start () {
+
+    private void OnEnable() {
+        _calendarPanel.GetComponent<UnityEngine.UI.Image>().color = GameObject.FindGameObjectWithTag("Header").GetComponent<UnityEngine.UI.Image>().color;
+    }
+    void Start() {
         _calendarInstance = this;
         Vector3 startPos = _item.transform.localPosition;
-        _dateItems.Clear ();
-        _dateItems.Add (_item);
+        _dateItems.Clear();
+        _dateItems.Add(_item);
 
         for (int i = 1; i < _totalDateNum; i++) {
-            GameObject item = GameObject.Instantiate (_item) as GameObject;
-            item.name = "Item" + (i + 1).ToString ();
-            item.transform.SetParent (_item.transform.parent);
+            GameObject item = GameObject.Instantiate(_item) as GameObject;
+            item.name = "Item" + (i + 1).ToString();
+            item.transform.SetParent(_item.transform.parent);
             item.transform.localScale = Vector3.one;
             item.transform.localRotation = Quaternion.identity;
-            item.transform.localPosition = new Vector3 ((i % 7) * 31 + startPos.x, startPos.y - (i / 7) * 25, startPos.z);
+            item.transform.localPosition = new Vector3((i % 7) * 31 + startPos.x, startPos.y - (i / 7) * 25, startPos.z);
 
-            _dateItems.Add (item);
+            _dateItems.Add(item);
         }
 
         _dateTime = DateTime.Now;
 
-        CreateCalendar ();
+        CreateCalendar();
 
-        _calendarPanel.SetActive (true);
+        _calendarPanel.SetActive(true);
     }
 
-    void CreateCalendar () {
-        DateTime firstDay = _dateTime.AddDays (-(_dateTime.Day - 1));
-        int index = GetDays (firstDay.DayOfWeek);
-        _yearNumText.text = _dateTime.Year.ToString ();
-        _monthNumText.text = _dateTime.Month.ToString ();
+    void CreateCalendar() {
+        DateTime firstDay = _dateTime.AddDays(-(_dateTime.Day - 1));
+        int index = GetDays(firstDay.DayOfWeek);
+        _yearNumText.text = _dateTime.Year.ToString();
+        _monthNumText.text = _dateTime.Month.ToString();
         int date = 0;
         for (int i = 0; i < _totalDateNum; i++) {
-            Text label = _dateItems[i].GetComponentInChildren<Text> ();
-            _dateItems[i].SetActive (false);
+            Text label = _dateItems[i].GetComponentInChildren<Text>();
+            _dateItems[i].SetActive(false);
 
             if (i >= index) {
-                DateTime thatDay = firstDay.AddDays (date);
+                DateTime thatDay = firstDay.AddDays(date);
                 if (thatDay.Month == firstDay.Month) {
-                    _dateItems[i].SetActive (true);
+                    _dateItems[i].SetActive(true);
 
-                    label.text = (date + 1).ToString ();
+                    label.text = (date + 1).ToString();
 
-                    _dateItems[i].GetComponent<CalendarDateItem> ().CheckDate ();
+                    _dateItems[i].GetComponent<CalendarDateItem>().CheckDate();
 
                     date++;
                 }
@@ -71,7 +75,7 @@ public class CalendarController : MonoBehaviour {
 
     }
 
-    int GetDays (DayOfWeek day) {
+    int GetDays(DayOfWeek day) {
         switch (day) {
             case DayOfWeek.Monday:
                 return 0;
@@ -91,24 +95,24 @@ public class CalendarController : MonoBehaviour {
 
         return 0;
     }
-    public void YearPrev () {
-        _dateTime = _dateTime.AddYears (-1);
-        CreateCalendar ();
+    public void YearPrev() {
+        _dateTime = _dateTime.AddYears(-1);
+        CreateCalendar();
     }
 
-    public void YearNext () {
-        _dateTime = _dateTime.AddYears (1);
-        CreateCalendar ();
+    public void YearNext() {
+        _dateTime = _dateTime.AddYears(1);
+        CreateCalendar();
     }
 
-    public void MonthPrev () {
-        _dateTime = _dateTime.AddMonths (-1);
-        CreateCalendar ();
+    public void MonthPrev() {
+        _dateTime = _dateTime.AddMonths(-1);
+        CreateCalendar();
     }
 
-    public void MonthNext () {
-        _dateTime = _dateTime.AddMonths (1);
-        CreateCalendar ();
+    public void MonthNext() {
+        _dateTime = _dateTime.AddMonths(1);
+        CreateCalendar();
     }
 
     //public void ShowCalendar(Text target)
@@ -124,9 +128,9 @@ public class CalendarController : MonoBehaviour {
     //    //_calendarPanel.SetActive(false);
     //}
 
-    public DateTime GetDateTimeFromItem (string day) {
+    public DateTime GetDateTimeFromItem(string day) {
         DateTime date;
-        if (DateTime.TryParse (day + "/" + _monthNumText.text + "/" + _yearNumText.text, System.Globalization.CultureInfo.GetCultureInfo ("de-DE"),
+        if (DateTime.TryParse(day + "/" + _monthNumText.text + "/" + _yearNumText.text, System.Globalization.CultureInfo.GetCultureInfo("de-DE"),
                 System.Globalization.DateTimeStyles.AssumeLocal, out date)) {
             date = date.Date;
             // print ("DateTime succesfully parsed.");
