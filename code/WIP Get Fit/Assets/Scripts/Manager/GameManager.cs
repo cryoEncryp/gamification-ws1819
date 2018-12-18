@@ -127,6 +127,9 @@ public class GameManager : MonoBehaviour {
 
         PlayerPrefsX.SetColor("mainColor", mainCol);
         PlayerPrefsX.SetColor("bgColor", bgCol);
+
+        PlayerPrefs.SetInt("notification_h", NotificationTimer.h);
+        PlayerPrefs.SetInt("notification_m", NotificationTimer.m);
     }
 
     // restores all savestate data and replaces instance vars accordingly
@@ -156,6 +159,9 @@ public class GameManager : MonoBehaviour {
             }
             mainCol = mainColor; bgCol = bgColor;
 
+            NotificationTimer.h = PlayerPrefs.GetInt("notification_h");
+            NotificationTimer.m = PlayerPrefs.GetInt("notification_m");
+            NotificationTimer.SetupLocalNotificationsOnReboot(NotificationTimer.h, NotificationTimer.m, 7);
             //unlock all currently unlocked rewards again
             LevelRewards.UnlockLevelRewards();
         } else {

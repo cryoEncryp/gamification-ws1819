@@ -16,28 +16,28 @@ public class LevelRewards : MonoBehaviour {
         }
         if (lvl >= 2) {
             GameManager.instance.unlockedWorkouts.Add(20);
-            //GameManager.instance.unlockedColors.Add(2);
+            GameManager.instance.unlockedColors.Add(2);
         }
         if (lvl >= 3) {
-
+            GameManager.instance.unlockedColors.Add(3);
         }
         if (lvl >= 4) {
-
+            GameManager.instance.unlockedColors.Add(4);
         }
         if (lvl >= 5) {
-
+            GameManager.instance.unlockedColors.Add(5);
         }
         if (lvl >= 6) {
-
+            GameManager.instance.unlockedColors.Add(6);
         }
         if (lvl >= 7) {
-
+            GameManager.instance.unlockedColors.Add(7);
         }
         if (lvl >= 8) {
-
+            GameManager.instance.unlockedColors.Add(8);
         }
         if (lvl >= 9) {
-
+            GameManager.instance.unlockedColors.Add(9);
         }
         if (lvl >= 10) {
 
@@ -86,8 +86,8 @@ public class LevelRewards : MonoBehaviour {
         "", //7
         "", //8
         "", //9
-        "Level 10 rewardssss", //10
-        "Neues Design", //11
+        "Level 10 rewards", //10
+        "1 neues Workout, 2 neue Designs", //11
         "", //12
         "", //13
         "", //14
