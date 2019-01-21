@@ -9,11 +9,15 @@ public class DailyChallengeSetup : MonoBehaviour {
 
     void OnEnable() {
         int counter = 0;
+
+        CleanInfoClones();
+
         foreach (WorkoutSession ws in GameManager.instance.todaysChallenge.challenges) {
             //instantiate clone and setup its position
             GameObject workoutInfoClone = Instantiate(workoutInfo);
             workoutInfoClone.transform.SetParent(this.transform);
             workoutInfoClone.transform.localPosition = new Vector2(posX, posY - (counter * spacing));
+            workoutInfoClone.tag = "workoutInfoClone";
             counter++;
             //change labels to match WorkoutSession data
             var labels = workoutInfoClone.GetComponentsInChildren<UnityEngine.UI.Text>();
@@ -22,7 +26,8 @@ public class DailyChallengeSetup : MonoBehaviour {
             labels[2].text = (ws.durationSetup / 60f).ToString("0.00") + " min";
             labels[3].text = ws.GetBurnedCaloriesInSession(ws.durationSetup).ToString("0.00") + " kcal";
 
-            workoutInfoClone.GetComponent<UnityEngine.UI.Image>().sprite = GameManager.instance.workouts[ws.workoutId].icon;
+            var imgs = workoutInfoClone.GetComponentsInChildren<UnityEngine.UI.Image>();
+            imgs[1].sprite = GameManager.instance.workouts[ws.workoutId].icon;
 
             //activate clone
             workoutInfoClone.SetActive(true);
@@ -32,5 +37,12 @@ public class DailyChallengeSetup : MonoBehaviour {
 
     public void StartDailyChallenge() {
         SVManager.instance.ChangeWorkoutSV(SVManager.instance.dailyChallengeView);
+    }
+
+    public void CleanInfoClones() {
+        GameObject[] gos = GameObject.FindGameObjectsWithTag("workoutInfoClone");
+        foreach (GameObject go in gos) {
+            Destroy(go);
+        }
     }
 }

@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour {
 
     //stores all completed workouts
     public Dictionary<DateTime, List<WorkoutSession>> workoutHistory = new Dictionary<DateTime, List<WorkoutSession>>();
-    public List<DailyChallenge> dailyChallenges;
     public DailyChallenge todaysChallenge;
 
     public List<int> unlockedWorkouts = new List<int>();
@@ -50,6 +49,10 @@ public class GameManager : MonoBehaviour {
         else if (instance != this) Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
         LoadPrefs();
+    }
+
+    void Start() {
+        GenerateDailyChallenge();
     }
 
     public void AddWorkoutSessionToHistory(WorkoutSession ws) {
@@ -167,6 +170,18 @@ public class GameManager : MonoBehaviour {
         } else {
             intro.SetActive(true);
         }
+    }
+
+    public void GenerateDailyChallenge() {
+        int w0id, w1id, w2id;
+        //inefficient, but simple
+        do {
+            w0id = UnityEngine.Random.Range(0, 21);
+            w1id = UnityEngine.Random.Range(0, 21);
+            w2id = UnityEngine.Random.Range(0, 21);
+        } while ((w0id == w1id) || (w1id == w2id) || (w0id == w2id));
+        DailyChallenge tmp = new DailyChallenge(new List<WorkoutSession>(new WorkoutSession[] { new WorkoutSession(w0id, 300), new WorkoutSession(w1id, 300), new WorkoutSession(w2id, 300) }));
+        todaysChallenge = tmp;
     }
 
     public void AddXP(int exp) {

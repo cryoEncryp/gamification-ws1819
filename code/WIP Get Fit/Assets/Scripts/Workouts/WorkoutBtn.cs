@@ -11,25 +11,26 @@ public class WorkoutBtn : MonoBehaviour {
     public Workout workout;
 
     private bool isUnlocked;
-    private void OnEnable () {
+    private void OnEnable() {
         workout = GameManager.instance.workouts[workoutId];
         label.text = workout.title;
         icon.sprite = workout.icon;
+        UnityEngine.UI.Image btnBG = this.GetComponent<UnityEngine.UI.Button>().image;
 
-        if (GameManager.instance.unlockedWorkouts.IndexOf (workoutId) != -1) {
+        if (GameManager.instance.unlockedWorkouts.IndexOf(workoutId) != -1) {
             isUnlocked = true;
-            icon.color = Color.white;
+            btnBG.color = Color.white;
         } else {
             isUnlocked = false;
-            icon.color = Color.gray;
+            btnBG.color = Color.gray;
             label.text += "\n[LOCKED]";
         }
     }
 
-    public void OnClick () {
+    public void OnClick() {
         if (isUnlocked) {
             GameManager.instance.currentWorkoutSession.workoutId = workoutId;
-            SVManager.instance.ChangeWorkoutSV (SVManager.instance.workoutSetup);
+            SVManager.instance.ChangeWorkoutSV(SVManager.instance.workoutSetup);
         }
     }
 

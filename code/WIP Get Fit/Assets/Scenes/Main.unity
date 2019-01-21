@@ -6082,7 +6082,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1289833662}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7725,6 +7725,75 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 623981552}
   m_CullTransparentMesh: 0
+--- !u!1 &625144688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 625144689}
+  - component: {fileID: 625144691}
+  - component: {fileID: 625144690}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &625144689
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625144688}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1289833662}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 250, y: 250}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &625144690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625144688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &625144691
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625144688}
+  m_CullTransparentMesh: 0
 --- !u!1 &660764124
 GameObject:
   m_ObjectHideFlags: 0
@@ -8197,7 +8266,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1289833662}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9341,135 +9410,231 @@ MonoBehaviour:
   - title: "Liegest\xFCtz"
     group: arms
     workoutId: 0
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: e72c31035bf2c457a9b5c194ca1778d7, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
+    assumedBPM: 120
+    instructions:
+    - "Lege dich auf den Boden und platziere deine H\xE4nde senkrecht unter deinen
+      Schultern."
+    - "St\xFCtze deinen Oberk\xF6rper ab, halte den R\xFCcken gerade und beuge langsam
+      deine Arme."
+    - "Sobald du mit der Nase den Boden ber\xFChrst, dr\xFCcke dich langsam wieder
+      nach oben."
   - title: Dips
     group: arms
     workoutId: 1
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: e72c31035bf2c457a9b5c194ca1778d7, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
+    assumedBPM: 115
+    instructions:
+    - "Nutze einen Stuhl o.\xE4."
+    - "Umfasse die Sitzfl\xE4che am vorderen Rand mit beiden H\xE4nden, sodass der
+      Handr\xFCcken nach vorne weist."
+    - "Strecke die Beine aus, beuge die Arme bis sie einen 90-Grad Winkel formen und
+      strecke sie anschlie\xDFend wieder."
   - title: Bizeps-Curl
     group: arms
     workoutId: 2
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: e72c31035bf2c457a9b5c194ca1778d7, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 4
+    assumedBPM: 118
+    instructions:
+    - Nutze Hanteln oder alternative Gewichte (bspw. Wasserflaschen).
+    - Strecke deinen Arm aus.
+    - "Spanne den Bizeps an und forme einen 90-Grad Winkel, erst mit dem rechten,
+      anschlie\xDFend mit dem linken Arm."
+  - title: "Schulterdr\xFCcken"
     group: shoulder
     workoutId: 3
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 4566873595c4241488f18575e21d1cdf, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 
+    assumedBPM: 125
+    instructions:
+    - "Lege dich auf den Boden und platziere deine H\xE4nde senkrecht unter deinen
+      Schultern."
+    - "St\xFCtze deinen Oberk\xF6rper ab, halte den R\xFCcken gerade und beuge langsam
+      deine Arme."
+    - "Sobald du mit der Nase den Boden ber\xFChrst, strecke deine Arme und beuge
+      gleichzeitig deine Beine."
+  - title: Sit Outs
     group: shoulder
     workoutId: 4
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 4566873595c4241488f18575e21d1cdf, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 
+    assumedBPM: 122
+    instructions:
+    - "Lege dich auf den Boden und platziere deine H\xE4nde senkrecht unter deinen
+      Schultern."
+    - "St\xFCtze deinen Oberk\xF6rper ab, halte den R\xFCcken gerade und beuge langsam
+      deine Arme."
+    - Hebe das rechte Bein an, drehe dich zur linken Seite.
+    - "Die linke Hand verl\xE4sst den Boden, das angehobene Bein bleibt f\xFCr einen
+      Moment in der Schwebe"
+    - "F\xFCr ein paar Sekunden halten, dann zur\xFCck in die Ausgangsposition und
+      Seiten wechseln."
+  - title: Krabbenlauf
     group: shoulder
     workoutId: 5
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 4566873595c4241488f18575e21d1cdf, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 7
+    assumedBPM: 117
+    instructions:
+    - Setze dich auf den Boden.
+    - "Winkle deine Beine an und positionier deine Arme neben deinen K\xF6rper."
+    - "Drehe deine H\xE4nde etwas nach au\xDFen, sodass die Fingerspitzen nicht Richtung
+      F\xFC\xDFe zeigen."
+    - "Hebe dein Ges\xE4\xDF an und lauf los (oder bleib so stehen)."
+  - title: L-Seat
     group: abs
     workoutId: 6
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: be50774086ab74a8a84ef07a7c6e5b97, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 
+    assumedBPM: 107
+    instructions:
+    - "Setze dich auf den Boden und platzier deine H\xE4nde jeweils neben deiner H\xFCfte."
+    - Strecke deine Beine im 90-Grad Winkel aus.
+    - "Dr\xFCcke deine Arme durch."
+    - Deine Beine sind nun parallel zum Boden in der Schwebe, ein paar Sekunden halten
+      und wieder in die Ausgangsposition gehen, dann wiederholen.
+  - title: Bauchpresse
     group: abs
     workoutId: 7
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: be50774086ab74a8a84ef07a7c6e5b97, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 
+    assumedBPM: 116
+    instructions:
+    - "Lege dich mit dem R\xFCcken auf den Boden."
+    - "Winkle deine Knie an und platziere deine F\xFC\xDFe flach auf dem Boden."
+    - "Beine und F\xFC\xDFe bleiben unbewegt, w\xE4hrend du die Brust in Richtung
+      Knie bewegst."
+    - "Gehe zur\xFCck in die Ausgangsposition und wiederhole."
+  - title: "H\xFCftheben"
     group: abs
     workoutId: 8
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: be50774086ab74a8a84ef07a7c6e5b97, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 10
+    assumedBPM: 114
+    instructions:
+    - "Lege dich mit dem R\xFCcken auf den Boden."
+    - Streck deine Beine aus, spanne den Bauch an und hebe beide Beine an, bis sie
+      senkrecht zum Boden sind.
+    - "Halte die Position kurz und lass die Beine langsam wieder in die Ausgangsposition
+      zur\xFCck."
+    - Wiederhole.
+  - title: Ausfallschritt
     group: legs
     workoutId: 9
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: e15220c3ef06a4d25bc892c1388a27e5, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 
+    assumedBPM: 90
+    instructions:
+    - Stelle dich aufrecht hin.
+    - Mach eine Kniebeuge bis du in der Hocke bist.
+    - "Jetzt gehst du in die Hocke bis das Knie des hinteren Beins fast den Boden
+      ber\xFChrt."
+    - Gehe nun in die Ausgangsposition und mache das selbe mit dem anderen Bein.
+  - title: Wandsitzen
     group: legs
     workoutId: 10
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: e15220c3ef06a4d25bc892c1388a27e5, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 
+    assumedBPM: 95
+    instructions:
+    - Gehe zu einer Wand.
+    - "Lehne dich mit deinem R\xFCcken an diese, gehe so weit runter bis deine Beine
+      einen Winkel von 90 Grad bilden."
+    - Nun halte diese Position.
+  - title: Seitliche Beinhebe
     group: legs
     workoutId: 11
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: e15220c3ef06a4d25bc892c1388a27e5, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 13
+    assumedBPM: 92
+    instructions:
+    - 'Lege dich auf die Seite. '
+    - "Dein ganzer K\xF6rper sollte eine gerade Linie haben. "
+    - 'Nun hebe dein oben liegendes Bein immer wieder an. '
+    - "Lege dich danach auf die andere Seite und f\xFChre die \xDCbung mit dem anderen
+      Bein durch."
+  - title: Plank
     group: fullbody
     workoutId: 12
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 1b6f791f2748e496887cd9e1c57b8495, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 
+    assumedBPM: 100
+    instructions:
+    - Lege dich auf den Bauch.
+    - "St\xFCtze dich auf deinen beiden Unterarmen ab und positioniere die Ellenbogen
+      unterhalb deiner Schultern."
+    - "Behalte einen geraden R\xFCcken, so dass zwischen den Fersen und deinen Schultern
+      eine gerade Linie gebildet wird."
+    - "Achte darauf, dass der R\xFCcken kein Hohlkreuz bildet. "
+    - Behalte diese Position.
+  - title: Superman
     group: fullbody
     workoutId: 13
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 1b6f791f2748e496887cd9e1c57b8495, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 
+    assumedBPM: 110
+    instructions:
+    - 'Lege dich auf den Bauch. '
+    - 'Nun hebe deine Beine sowie die nach vorn gestreckten Arme an. '
+    - Behalte diese Position.
+  - title: Burpees
     group: fullbody
     workoutId: 14
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 1b6f791f2748e496887cd9e1c57b8495, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 16
+    assumedBPM: 135
+    instructions:
+    - 'Stelle dich aufrecht hin. '
+    - Mach eine Kniebeuge bis du in der Hocke bist.
+    - "Gehe nun von dieser Position in die Liegest\xFCtzstellung und mache einen Liegest\xFCtz. "
+    - 'Richte dich nun wieder auf und springe einmal in die Luft. '
+    - Wiederhole diesen Vorgang.
+  - title: Kniehebelauf
     group: cardio
     workoutId: 15
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 13146841d192b413ca93f9c5c9234e12, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 
+    assumedBPM: 127
+    instructions:
+    - Laufe auf der Stelle.
+    - "Dabei ziehst du deine Oberschenkel abwechselnd soweit wie m\xF6glich an deinen
+      Oberk\xF6rper ran. "
+    - "Achte darauf deinen K\xF6rper in einer aufrechten Haltung zu haben und behalte
+      einen geraden R\xFCcken."
+  - title: Kniebeuge
     group: cardio
     workoutId: 16
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 13146841d192b413ca93f9c5c9234e12, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
-  - title: 
+    assumedBPM: 108
+    instructions:
+    - 'Stelle dich aufrecht hin. '
+    - "Strecke deine Arme w\xE4hrend des Vorgangs parallel gerade nach vorne. "
+    - 'Gehe nun in die Hocke soweit es geht. '
+    - "Achte jedoch darauf, dass deine Knie sich nicht \xFCber deine Fu\xDFspitzen
+      hinaus bewegen. "
+    - 'Richte dich nach der Bewegung wieder auf. '
+    - "Bleibe dabei in einer aufrechten Haltung und behalte einen geraden R\xFCcken. "
+    - Wiederhole diesen Vorgang.
+  - title: Anfersen
     group: cardio
     workoutId: 17
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 13146841d192b413ca93f9c5c9234e12, type: 3}
     video: {fileID: 0}
-    assumedBPM: 0
-    instructions: []
+    assumedBPM: 126
+    instructions:
+    - 'Laufe auf der Stelle. '
+    - "Ziehe deine Fersen abwechselnd soweit wie m\xF6glich an dein Hinterteil ran. "
+    - "Bleibe dabei in einer aufrechten Haltung und behalte einen geraden R\xFCcken."
   - title: Lunges
     group: stretch
     workoutId: 18
-    icon: {fileID: 21300000, guid: fedf3bab7cb0948fa9fb21929bc4a87c, type: 3}
+    icon: {fileID: 21300000, guid: f646574ea8761473f84f025ebfb1a3cf, type: 3}
     video: {fileID: 32900000, guid: 6626db9a03133464fafe7e57f5516055, type: 3}
-    assumedBPM: 100
+    assumedBPM: 101
     instructions:
     - Ausfallschritt nach vorne machen
     - "R\xFCcken gerade halten und darauf achten, dass das vordere Knie hinter der
@@ -9478,16 +9643,16 @@ MonoBehaviour:
   - title: "Runner\u2019s Stretch"
     group: stretch
     workoutId: 19
-    icon: {fileID: 21300000, guid: 058e1cb9fe7d94e5cba99768301bd4b5, type: 3}
+    icon: {fileID: 21300000, guid: f646574ea8761473f84f025ebfb1a3cf, type: 3}
     video: {fileID: 32900000, guid: a2b1dd38ac1d048a0b82797bba5f0de8, type: 3}
-    assumedBPM: 90
+    assumedBPM: 92
     instructions: []
   - title: Seated Back Twist
     group: stretch
     workoutId: 20
-    icon: {fileID: 21300000, guid: 01efc42eac6b04ffb879b996858df7a9, type: 3}
+    icon: {fileID: 21300000, guid: f646574ea8761473f84f025ebfb1a3cf, type: 3}
     video: {fileID: 32900000, guid: 8ee68b0c6efa5477097b3b07c124e164, type: 3}
-    assumedBPM: 80
+    assumedBPM: 83
     instructions: []
   expInc: 1
   inverseCalcFactor: 1
@@ -9500,7 +9665,6 @@ MonoBehaviour:
     kcal: 0
     isFreeMode: 0
   isCurrentWorkoutActive: 0
-  dailyChallenges: []
   todaysChallenge:
     challenges: []
   unlockedWorkouts: 12000000
@@ -13390,7 +13554,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1289833662}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14549,6 +14713,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 625144689}
   - {fileID: 1218579246}
   - {fileID: 1881088243}
   - {fileID: 701453609}
@@ -18197,7 +18362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1188}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1655873950
@@ -20577,7 +20742,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1289833662}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

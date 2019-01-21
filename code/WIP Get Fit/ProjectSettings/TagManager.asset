@@ -8,6 +8,7 @@ TagManager:
   - Camera
   - Header
   - BGColor
+  - workoutInfoClone
   layers:
   - Default
   - TransparentFX
