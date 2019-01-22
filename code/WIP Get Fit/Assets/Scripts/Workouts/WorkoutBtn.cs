@@ -23,7 +23,7 @@ public class WorkoutBtn : MonoBehaviour {
         } else {
             isUnlocked = false;
             btnBG.color = Color.gray;
-            label.text += "\n[LOCKED]";
+            icon.sprite = GameManager.instance.sprLock;
         }
     }
 

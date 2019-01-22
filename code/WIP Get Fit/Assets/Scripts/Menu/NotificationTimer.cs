@@ -10,29 +10,40 @@ public class NotificationTimer : MonoBehaviour {
 
     public void OnEnable() {
         hours.text = h.ToString(); minutes.text = m.ToString();
+
+        if (!GameManager.instance.hasUnlockedNotifications) {
+            notificationToggle.interactable = false;
+            notificationToggle.GetComponentInChildren<UnityEngine.UI.Text>().text = "[Gesperrt]";
+        } else {
+            notificationToggle.interactable = true;
+            notificationToggle.GetComponentInChildren<UnityEngine.UI.Text>().text = "Aktiv?";
+        }
+
     }
 
     public void OnToggle() {
-        if (notificationToggle.isOn) {
-            int _h = int.Parse(hours.text); int _m = int.Parse(minutes.text);
-            h = _h; m = _m;
+        if (GameManager.instance.hasUnlockedNotifications) {
+            if (notificationToggle.isOn) {
+                int _h = int.Parse(hours.text); int _m = int.Parse(minutes.text);
+                h = _h; m = _m;
 
-            DateTime dt = DateTime.Now.Date.AddDays(1);
-            TimeSpan ts = new TimeSpan(_h, _m, 0);
-            dt = dt.Date + ts;
+                DateTime dt = DateTime.Now.Date.AddDays(1);
+                TimeSpan ts = new TimeSpan(_h, _m, 0);
+                dt = dt.Date + ts;
 
-            TimeSpan delay = dt - DateTime.Now;
-            int delayInMin = (int)delay.TotalMinutes;
+                TimeSpan delay = dt - DateTime.Now;
+                int delayInMin = (int)delay.TotalMinutes;
 
-            SetupLocalNotifications(delayInMin, 7);
-        } else {
-            NativeToolkit.ClearAllLocalNotifications();
+                SetupLocalNotifications(delayInMin, 7);
+            } else {
+                NativeToolkit.ClearAllLocalNotifications();
+            }
         }
     }
 
     public void SetupLocalNotifications(int delayInMin, int days) {
         for (int i = 0; i < days; i++) {
-            NativeToolkit.ScheduleLocalNotification("GET FIT", "Hi, wie wär's mit einem Workout?", 0, delayInMin + (1440 * i),
+            NativeToolkit.ScheduleLocalNotification("GET FIT", "Wie wär's mit einem Workout?", 0, delayInMin + (1440 * i),
                                                 "default_sound", true, "ic_notification", "ic_notification_large");
         }
     }

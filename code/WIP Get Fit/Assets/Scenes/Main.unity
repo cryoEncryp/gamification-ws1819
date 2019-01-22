@@ -4127,7 +4127,7 @@ GameObject:
   - component: {fileID: 254053111}
   - component: {fileID: 254053110}
   m_Layer: 5
-  m_Name: Credits (1)
+  m_Name: Privacy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5876,6 +5876,82 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 441805476}
+  m_CullTransparentMesh: 0
+--- !u!1 &449323142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 449323143}
+  - component: {fileID: 449323145}
+  - component: {fileID: 449323144}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &449323143
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 449323142}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1710051562}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 540, y: 1700}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &449323144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 449323142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 42
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 53
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Icons:\nicons8.de\n\nTipps:\nErn\xE4hrung: naturalism.de\nMuskelaufbau:
+    menshealth.de\n\nVideos:\nYouTube-Kan\xE4le:"
+--- !u!222 &449323145
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 449323142}
   m_CullTransparentMesh: 0
 --- !u!1 &452250762
 GameObject:
@@ -9358,9 +9434,9 @@ RectTransform:
   - {fileID: 879599484}
   - {fileID: 1128147132}
   - {fileID: 89119149}
-  - {fileID: 1961910967}
   - {fileID: 1186842722}
   - {fileID: 1088290254}
+  - {fileID: 1961910967}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9629,11 +9705,11 @@ MonoBehaviour:
     - 'Laufe auf der Stelle. '
     - "Ziehe deine Fersen abwechselnd soweit wie m\xF6glich an dein Hinterteil ran. "
     - "Bleibe dabei in einer aufrechten Haltung und behalte einen geraden R\xFCcken."
-  - title: Lunges
+  - title: Kniesehnen-Dehnung
     group: stretch
     workoutId: 18
     icon: {fileID: 21300000, guid: f646574ea8761473f84f025ebfb1a3cf, type: 3}
-    video: {fileID: 32900000, guid: 6626db9a03133464fafe7e57f5516055, type: 3}
+    video: {fileID: 0}
     assumedBPM: 101
     instructions:
     - Ausfallschritt nach vorne machen
@@ -9669,6 +9745,11 @@ MonoBehaviour:
     challenges: []
   unlockedWorkouts: 12000000
   unlockedColors: 
+  hasUnlockedDailyChallenge: 0
+  hasUnlockedNutritionTips: 0
+  hasUnlockedMuscleTips: 0
+  hasUnlockedNotifications: 0
+  sprLock: {fileID: 21300000, guid: 316591a2c1d3d48e99525b2ead1b9336, type: 3}
 --- !u!1 &809608049
 GameObject:
   m_ObjectHideFlags: 0
@@ -12026,7 +12107,7 @@ RectTransform:
   - {fileID: 1740732561}
   - {fileID: 254053109}
   m_Father: {fileID: 808476330}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12454,7 +12535,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1128147131}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9328844e78bcc49b5ab9b0c11b9c1ec8, type: 3}
+  m_Script: {fileID: 11500000, guid: 536b0a2fbc1fc4aca989c7d7a30fe1eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1138470282
@@ -12999,7 +13080,7 @@ RectTransform:
   - {fileID: 2082955504}
   - {fileID: 1411206490}
   m_Father: {fileID: 808476330}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -16822,6 +16903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1469517742}
   - component: {fileID: 1469517745}
+  - component: {fileID: 1469517746}
   - component: {fileID: 1469517744}
   - component: {fileID: 1469517743}
   m_Layer: 5
@@ -16887,7 +16969,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1469517744}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1469517746}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1469517744
@@ -16930,6 +17023,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1469517741}
   m_CullTransparentMesh: 0
+--- !u!114 &1469517746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1469517741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34726db05dc5437e8396a01b6cfd91c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://www.naturaslim.de/naturaslim-coach/ernaehrungscoach/die-top-10-ernaehrungstipps.html
 --- !u!1 &1472404956
 GameObject:
   m_ObjectHideFlags: 0
@@ -19140,6 +19245,76 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1710051561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1710051562}
+  - component: {fileID: 1710051564}
+  - component: {fileID: 1710051563}
+  m_Layer: 5
+  m_Name: creditsMenu
+  m_TagString: BGColor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1710051562
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710051561}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 449323143}
+  m_Father: {fileID: 1740732561}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 540}
+  m_SizeDelta: {x: 540, y: 1700}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1710051563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710051561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.90196085, g: 0.90196085, b: 0.90196085, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1710051564
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710051561}
+  m_CullTransparentMesh: 0
 --- !u!1 &1715243832
 GameObject:
   m_ObjectHideFlags: 0
@@ -19305,6 +19480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1740732561}
   - component: {fileID: 1740732564}
+  - component: {fileID: 1740732565}
   - component: {fileID: 1740732563}
   - component: {fileID: 1740732562}
   m_Layer: 5
@@ -19323,7 +19499,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1710051562}
   m_Father: {fileID: 1088290254}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19370,7 +19547,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1740732563}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1740732565}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1740732563
@@ -19415,6 +19603,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1740732560}
   m_CullTransparentMesh: 0
+--- !u!114 &1740732565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1740732560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e90cd649b79404094accb8c7e9c000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creditsMenu: {fileID: 1710051561}
 --- !u!1 &1747925438
 GameObject:
   m_ObjectHideFlags: 0
@@ -20054,6 +20254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797203018}
   - component: {fileID: 1797203021}
+  - component: {fileID: 1797203022}
   - component: {fileID: 1797203020}
   - component: {fileID: 1797203019}
   m_Layer: 5
@@ -20119,7 +20320,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1797203020}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1797203022}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1797203020
@@ -20162,6 +20374,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1797203017}
   m_CullTransparentMesh: 0
+--- !u!114 &1797203022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1797203017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3504a1c8b3e04576b97d40b25aede4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://www.menshealth.de/artikel/die-besten-tipps-fuer-schnellen-muskelaufbau.417166.html
 --- !u!1 &1802140068
 GameObject:
   m_ObjectHideFlags: 0
@@ -21742,6 +21966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1088290253}
+  creditsMenu: {fileID: 0}
 --- !u!1 &1947197655
 GameObject:
   m_ObjectHideFlags: 0
@@ -21957,6 +22182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1088290253}
+  creditsMenu: {fileID: 1710051561}
 --- !u!1 &1951914445
 GameObject:
   m_ObjectHideFlags: 0
@@ -22137,7 +22363,7 @@ RectTransform:
   - {fileID: 157280768}
   - {fileID: 135907178}
   m_Father: {fileID: 808476330}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

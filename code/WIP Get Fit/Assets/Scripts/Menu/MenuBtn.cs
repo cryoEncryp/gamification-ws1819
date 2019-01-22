@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuBtn : MonoBehaviour {
-    public GameObject menu;
+    public GameObject menu, creditsMenu;
 
     public void Open() {
         menu.SetActive(true);
@@ -11,5 +11,6 @@ public class MenuBtn : MonoBehaviour {
 
     public void Close() {
         menu.SetActive(false);
+        creditsMenu.SetActive(false);
     }
 }

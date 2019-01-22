@@ -35,6 +35,14 @@ public class GameManager : MonoBehaviour {
     public List<int> unlockedWorkouts = new List<int>();
     public List<int> unlockedColors = new List<int>();
 
+    public bool hasUnlockedDailyChallenge = false;
+    public bool hasUnlockedNutritionTips = false;
+    public bool hasUnlockedMuscleTips = false;
+    public bool hasUnlockedNotifications = false;
+
+
+    public Sprite sprLock;
+
     void OnApplicationPause() {
         SavePrefs();
     }

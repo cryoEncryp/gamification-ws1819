@@ -11,10 +11,20 @@ public class DailyChallengeBtn : MonoBehaviour {
         WorkoutGroup wg = GameManager.instance.workoutGroups[groupId];
         label.text = wg.groupName;
         icon.sprite = wg.icon;
+
+    }
+
+    private void OnEnable() {
+        if (!GameManager.instance.hasUnlockedDailyChallenge) {
+            icon.sprite = GameManager.instance.sprLock;
+        } else {
+            icon.sprite = GameManager.instance.workoutGroups[groupId].icon;
+        }
     }
     public void OnClick() {
-        //pick (semi-)random dailyChallenge here in the future?
-        SVManager.instance.ChangeWorkoutSV(SVManager.instance.dailyChallengeSetup);
-        GameManager.instance.GenerateDailyChallenge();
+        if (GameManager.instance.hasUnlockedDailyChallenge) {
+            SVManager.instance.ChangeWorkoutSV(SVManager.instance.dailyChallengeSetup);
+            GameManager.instance.GenerateDailyChallenge();
+        }
     }
 }
