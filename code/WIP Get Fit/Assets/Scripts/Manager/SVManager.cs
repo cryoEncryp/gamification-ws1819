@@ -37,9 +37,9 @@ public class SVManager : MonoBehaviour {
             }
         } else {
             WorkoutView.instance.TriggerWorkoutSession();
-            new Alert("Warning", "You're in the middle of a workout.\nDo you still want to exit?")
-                .SetPositiveButton("Yes", () => { WorkoutView.instance.ExitWorkout(); ChangeSV(sv); })
-                .SetNegativeButton("No", () => { WorkoutView.instance.TriggerWorkoutSession(); })
+            new Alert("Achtung", "Du befindest dich in einem Workout. Möchtest du es beenden?")
+                .SetPositiveButton("Ja", () => { WorkoutView.instance.ExitWorkout(); ChangeSV(sv); })
+                .SetNegativeButton("Nein", () => { WorkoutView.instance.TriggerWorkoutSession(); })
                 .Show();
         }
 
@@ -62,6 +62,7 @@ public class SVManager : MonoBehaviour {
         instructionOverview.SetActive(false);
         instructionView.SetActive(false);
         sv.SetActive(true);
+        GameObject.Find("InstructionsSV").GetComponent<UnityEngine.UI.ScrollRect>().normalizedPosition = new Vector2(0, 1);
         RefreshColor();
     }
 
