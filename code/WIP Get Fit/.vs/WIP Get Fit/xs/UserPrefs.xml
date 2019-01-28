@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{97196221-D562-80A4-4307-809C24F93AA5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Manager/SVManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Testing/TestData.cs">
     <Files>
       <File FileName="Assets/Scripts/Instructions/InstructionCell.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Instructions/InstructionSubcell.cs" Line="12" Column="84" />
-      <File FileName="Assets/Scripts/Manager/SVManager.cs" Line="65" Column="19" />
+      <File FileName="Assets/Scripts/Manager/SVManager.cs" Line="53" Column="38" />
+      <File FileName="Assets/Scripts/Testing/TestData.cs" Line="18" Column="71" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
