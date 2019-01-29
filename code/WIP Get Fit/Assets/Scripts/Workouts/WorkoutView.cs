@@ -118,6 +118,6 @@ public class WorkoutView : MonoBehaviour {
 
     //Prototype
     public void TEST_SkipWorkout() {
-        durationInSec = 5f;
+        durationInSec = 1f;
     }
 }
